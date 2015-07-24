@@ -14,7 +14,7 @@ module LuhnMod16
         next int unless doubled_hex.index(/[^0-9]/).nil?
         doubled_hex.chars.sum &:to_i
       end
-      reverse_code_point_map(16 - array.sum % 16)
+      reverse_code_point_map(15 - (array.sum - 1) % 16)
     end
 
     private
